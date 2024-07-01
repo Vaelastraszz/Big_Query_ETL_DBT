@@ -1,0 +1,13 @@
+version : 2
+
+sources:
+  - name: omnichannel
+    database: dbt-omnichannel
+    schema: omnichannel_raw
+    tables:
+      - name: channels
+      - name: customers
+      - name: products
+      - name: purchaseHistory
+      - name: visitHistory
+    
