@@ -10,9 +10,9 @@ with stg_fct_purchase_history as (
 )
 
 select
-    coalesce(dcust.nk_customer_id, -1) as sk_customer_id,
-    coalesce(dchan.nk_channel_id, -1) as sk_channel_id,
-    coalesce(dprod.nk_product_sku, -1) as sk_product_sku,
+    coalesce(dcust.sk_customer, "-1") as sk_customer_id,
+    coalesce(dchan.sk_channel, "-1") as sk_channel_id,
+    coalesce(dprod.sk_product, "-1") as sk_product_sku,
     fct.dt_order_date as sk_order_date,
     fct.mtr_quantity,
     fct.mtr_discount,
