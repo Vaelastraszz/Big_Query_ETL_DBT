@@ -1,53 +1,83 @@
 models:
   - name: dim_customers
+    description: >
+      This table contains information about all customers details. Includes anonymous users.
     columns:
       - name: sk_customer
+        description: >
+          Surrogate key for the customer dimension.
         tests:
           - unique
           - not_null  
   - name: dim_channels
+    description: >
+      This table contains information about all channels. Allows you to analyze the performance of each channel.
     columns:
       - name: sk_channel
+        description: >
+          Surrogate key for the channel dimension.
         tests:
           - unique
           - not_null
   - name: dim_date
+    description: >
+      This table contains information about all dates. Allows you to analyze the performance of each day.
     columns:
       - name: date_day
+        description: >
+          Date in the format YYYY-MM-DD. Surrogate key for the date dimension. The naming convention was not added there
         tests:
           - unique
           - not_null
   - name: dim_products
+    description: >
+      This table contains information about all products. Allows you to analyze the performance of each product.
     columns:
       - name: sk_product
+        description: >
+          Surrogate key for the product dimension.
         tests:
           - unique
           - not_null
   - name: fct_purchase_history
+    description: >
+      This table contains information about all purchases. Allows you to analyze the performance of each purchase.
     columns:
       - name: sk_customer_id
+        description: >
+          Foreign key to the customer dimension.
         tests:
           - relationships:
               to: ref('dim_customers')
               field: sk_customer
       - name: sk_channel_id
+        description: >
+          Foreign key to the channel dimension.
         tests:
           - relationships:
               to: ref('dim_channels')
               field: sk_channel
       - name: sk_product_sku
+        description: >
+          Foreign key to the product dimension.
         tests:
           - relationships:
               to: ref('dim_products')
               field: sk_product
   - name: fct_visit_history
+    description: >
+      This table contains information about all visits. Allows you to analyze the performance of each visit.
     columns:
       - name: sk_customer_id
+        description: >
+          Foreign key to the customer dimension.
         tests:
           - relationships:
               to: ref('dim_customers')
               field: sk_customer
       - name: sk_channel_id
+        description: >
+          Foreign key to the channel dimension.
         tests:
           - relationships:
               to: ref('dim_channels')
