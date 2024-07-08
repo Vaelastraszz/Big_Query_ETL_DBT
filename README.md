@@ -135,7 +135,4 @@ This project transforms raw data into a star schema for efficient querying and a
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss changes.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
