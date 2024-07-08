@@ -5,7 +5,7 @@
 This dbt project transforms a normalized database into a star schema in BigQuery. The project involves creating dimension tables for channels, customers, products, and dates, as well as fact tables for visit and purchase history. Sources are defined from the raw database, and analytical queries are provided to derive metrics from the transformed data model.
 
 ## Project Structure
-
+```
 .
 ├── README.md
 ├── dbt_project.yml
@@ -36,7 +36,7 @@ This dbt project transforms a normalized database into a star schema in BigQuery
 │ ├── filter_last_90_days.sql
 │ └── ...
 └── ...
-
+```
 
 ## Installation
 
